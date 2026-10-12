@@ -1,0 +1,104 @@
+/* Generic Python syntax highlighting */
+
+.codehilite,
+.highlight,
+.language-python,
+.python {
+  --py-bg: #f6f8fa;
+  --py-fg: #24292e;
+  --py-cmt: #6a737d;
+  --py-key: #d73a49;
+  --py-func: #6f42c1;
+  --py-str: #032f62;
+  --py-num: #005cc5;
+  --py-op: #24292e;
+  --py-dec: #e36209;
+  --py-attr: #0a3069;
+  background: var(--py-bg);
+  color: var(--py-fg);
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  line-height: 1.6;
+}
+
+.python .c,
+.python .comment,
+.python .sd,
+.python .cm {
+  color: var(--py-cmt);
+  font-style: italic;
+}
+
+.python .k,
+.python .kn,
+.python .kw,
+.python .keyword,
+.python .kc {
+  color: var(--py-key);
+  font-weight: 600;
+}
+
+.python .s,
+.python .s1,
+.python .s2,
+.python .str,
+.python .string {
+  color: var(--py-str);
+}
+
+.python .m,
+.python .mf,
+.python .mi,
+.python .mo,
+.python .number,
+.python .nb {
+  color: var(--py-num);
+}
+
+.python .n,
+.python .nv,
+.python .vc,
+.python .vg,
+.python .vi {
+  color: var(--py-fg);
+}
+
+.python .nf,
+.python .fm,
+.python .func,
+.python .function {
+  color: var(--py-func);
+}
+
+.python .o,
+.python .op,
+.python .p {
+  color: var(--py-op);
+}
+
+.python .nd,
+.python .dec,
+.python .deco,
+.python .decorator {
+  color: var(--py-dec);
+}
+
+.python .na,
+.python .attr,
+.python .nx {
+  color: var(--py-attr);
+}
+
+.python .bp,
+.python .self,
+.python .selfarg {
+  color: var(--py-key);
+}
+
+.python .err {
+  color: #b31d28;
+  border-bottom: 1px solid #b31d28;
+}
+
+.python .w {
+  color: transparent;
+}
