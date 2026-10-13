@@ -4,23 +4,20 @@
 #09:01
 declare(strict_types=1);
 
-/**
- * @template TFirst
- * @template TSecond
- */
-class GenericPair
+class Theme_Wrapper_Theme extends Theme_Wrapper_Base {
 {
-	/** @var TFirst */
 	private mixed $first;
 
-	/** @var TSecond */
+    private mixed $last;
 	private mixed $second;
-
-	/**
-	 * @param TFirst $first
-	 * @param TSecond $second
-	 */
-	public function __construct(mixed $first, mixed $second)
+public function __construct(mixed $first, mixed $last, mixed $second)
+    {
+        $this->first = $first;
+        $this->last = $last;
+        $this->second = $second;
+    }
+    
+	public function __construct_Second(mixed $first, mixed $second)
 	{
 		$this->first = $first;
 		$this->second = $second;
