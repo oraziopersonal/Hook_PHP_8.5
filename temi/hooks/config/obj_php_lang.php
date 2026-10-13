@@ -4,12 +4,12 @@
 #09:01
 declare(strict_types=1);
 
-class Theme_Wrapper_Theme extends Theme_Wrapper_Base {
-{
-	private mixed $first;
+class Theme_Wrapper_Theme {
+	public mixed $first;
 
     private mixed $last;
 	private mixed $second;
+
 public function __construct(mixed $first, mixed $last, mixed $second)
     {
         $this->first = $first;
