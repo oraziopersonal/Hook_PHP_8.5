@@ -1,0 +1,34 @@
+
+
+CREATE TABLE IF NOT EXISTS ai_conversations (
+	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	user_id BIGINT UNSIGNED NULL,
+	title VARCHAR(255) NOT NULL DEFAULT 'New conversation',
+	provider VARCHAR(80) NOT NULL,
+	model VARCHAR(120) NOT NULL,
+	settings JSON NULL,
+	created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	PRIMARY KEY (id),
+	KEY ai_conversations_user_updated_idx (user_id, updated_at),
+	CONSTRAINT ai_conversations_user_fk
+		FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS ai_messages (
+	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	conversation_id BIGINT UNSIGNED NOT NULL,
+	role VARCHAR(20) NOT NULL,
+	content LONGTEXT NOT NULL,
+	input_tokens INT UNSIGNED NULL,
+	output_tokens INT UNSIGNED NULL,
+	metadata JSON NULL,
+	created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	PRIMARY KEY (id),
+	KEY ai_messages_conversation_created_idx (conversation_id, created_at),
+	CONSTRAINT ai_messages_conversation_fk
+		FOREIGN KEY (conversation_id) REFERENCES ai_conversations (id) ON DELETE CASCADE,
+	CONSTRAINT ai_messages_role_check
+		CHECK (role IN ('system', 'user', 'assistant', 'tool'))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

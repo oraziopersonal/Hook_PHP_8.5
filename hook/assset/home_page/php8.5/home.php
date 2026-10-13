@@ -14,8 +14,8 @@
     if (isset($_GET["message"])) {
         $message = htmlspecialchars($_GET["message"]);
         echo "<p>Message: $message</p>";
-    } else if (isset($_GET[""])) {
-        $message = htmlspecialchars($_GET[""]);
+    } else if (isset($_GET["GET"])) {
+        $message = htmlspecialchars($_GET["GET"]);
     echo $var_One;
     echo $var_Two;
     } else if (isset($_POST["POST"])) {

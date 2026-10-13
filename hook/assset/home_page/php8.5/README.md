@@ -1,0 +1,2 @@
+-- Laravel AI chat storage schema (PHP 8.5, MySQL 8.0+).
+-- Uses Laravel's conventional users table; remove the user FK if auth is not needed.
