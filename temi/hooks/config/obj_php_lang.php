@@ -24,25 +24,25 @@ public function __construct(mixed $first, mixed $last, mixed $second)
 	}
 
 	/** @return TFirst */
-	public function getFirst(): mixed
+	public function get_first(): mixed
 	{
 		return $this->first;
 	}
 
 	/** @param TFirst $first */
-	public function setFirst(mixed $first): void
+	public function set_first(mixed $first): void
 	{
 		$this->first = $first;
 	}
 
 	/** @return TSecond */
-	public function getSecond(): mixed
+	public function get_second(): mixed
 	{
 		return $this->second;
 	}
 
 	/** @param TSecond $second */
-	public function setSecond(mixed $second): void
+	public function set_second(mixed $second): void
 	{
 		$this->second = $second;
 	}
